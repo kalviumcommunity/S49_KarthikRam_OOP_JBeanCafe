@@ -1,14 +1,14 @@
 # JBean Management System
 
-```java
->    if(coffeeLover){
->        return ("You will love it")
->    }else if(coder && coffeeLover){
->        return ("This is for you")
->    }else{
->        return ("Try both, you will fall in love with it")
->    }
-```
+>    ```java
+>       if(coffeeLover){
+>            return ("You will love it")
+>        }else if(coder && coffeeLover){
+>            return ("This is for you")
+>        }else{
+>            return ("Try both, you will fall in love with it")
+>        }
+>    ```
 
 ---
 
@@ -17,6 +17,8 @@
 This is an modernized solution implemented for the application of a coffee house. This project leverages the internal implementation and structure of the application as well as an overview of coffee and it’s varieties that is served.
 Through the journey of implementation, we would gain an understanding and an overview of the application about how it is developed from the basics by considering the innovative idea and applying it.
 As a CS student and developer, the focus throughout the journey is to apply the key concepts of **Object-Oriented Programming** and also adding few innovative idea to create this application.
+
+---
 
 ## Features Implemented :
 
@@ -27,9 +29,13 @@ As a CS student and developer, the focus throughout the journey is to apply the 
 5. Console interaction
 6. Adding number of coins/rewards based on the quantity of order by the customer
 
+---
+
 ## Programming Language :
 
 > **JAVA**
+
+---
 
 ## How OOP concepts will be applied :
 
@@ -67,3 +73,5 @@ This concept ensures that the complex implementation is hidden and only the nece
 This specifically means that concept focuses on what the object does rather than how it does.
 This could be implemented using the abstract classes and interfaces.
 For example, if a class has an **abstract** method called **serve()**. Now **Coffee** class and **Tea** class could use the **serve()** method and define if according the individual class. That means the way how a coffee or tea should be served.
+
+---
