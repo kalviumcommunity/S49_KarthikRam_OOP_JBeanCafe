@@ -1,0 +1,10 @@
+{
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-1.8",
+        "path": "path/to/jdk-1.8",
+        "default": true
+      }
+    ],
+    "java.compile.onsave": true
+  }
