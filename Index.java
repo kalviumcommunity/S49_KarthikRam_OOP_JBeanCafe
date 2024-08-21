@@ -1,16 +1,27 @@
-import Coffee;
 import java.util.*;
 
 public class Index{
     static public String name;
 
     public static void main(String[] args){
-        Coffee coffee = new Coffee();
-        System.out.println("Hello, world");
+        
+        //Objects
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What would you like to have ?");
-        String user = scanner.nextLine();
+        Menu menu = new Menu();
+
+        System.out.println("What coffee would you like to have?");
+        String coffeeChoice = scanner.nextLine().toLowerCase();
+
+        Coffee selectedCoffee = menu.getCoffeeByName(coffeeChoice);
+        System.out.println("what would be your preferred size for the coffee" + selectedCoffee + " ? (small, medium, large)");
+        String selectedSize = scanner.nextLine().toLowerCase();
+
+        if (selectedCoffee != null) {
+            System.out.println("Re-confirm your order, " + selectedCoffee.getCoffee(selectedSize));
+        } else {
+            System.out.println("Sorry, we don't have that coffee.");
+        }
+
         scanner.close();
-        System.out.printf("hello", user);
     }
 }
