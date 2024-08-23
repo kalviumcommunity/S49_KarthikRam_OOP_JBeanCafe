@@ -32,5 +32,10 @@ public class Coffee {
         return String.format("Coffee: %s, Size: %s, Price: Rs.%.2f", name, size, calculatePrice());
     }
 
+    //getter() method
+    public String getName(){
+        return name;
+    }
+
     // public Coffee espresso = new Coffee("espresso", "small", 2.3);
 }
