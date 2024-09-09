@@ -5,11 +5,17 @@ public class Coffee {
     private String size;
     private double basePrice;
 
+    private static int coffeeCount = 0;
+    private static int coffeeTotal = 0;
+
     Coffee(String name, String size, double basePrice){
         //this pointer
         this.name = name;
         this.size = size;
         this.basePrice = basePrice;
+
+        coffeeCount++;
+        coffeeTotal+=basePrice;
     }
 
     //method
@@ -38,4 +44,11 @@ public class Coffee {
     }
 
     // public Coffee espresso = new Coffee("espresso", "small", 2.3);
+
+    public static int getTotalCoffeeCount(){
+        return coffeeCount;
+    }
+    public static int getCoffeeRevenue(){
+        return coffeeTotal;
+    }
 }
