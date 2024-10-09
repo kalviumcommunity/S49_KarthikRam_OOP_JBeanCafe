@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class Index{
-    // static public String name;
     public static String name;
 
     public static void main(String[] args){
@@ -9,15 +8,19 @@ public class Index{
         //Objects
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu();
+        Admission admission = new Admission();
+        admission.addEmployee(new Employee("Karthik", "Ram", "ram@example.com", "1234567890", "E001", 50000));
+        admission.addEmployee(new Employee("Ram", "karthik", "karthik@example.com", "0987654321", "E002", 60000));
 
-        System.out.printf("Hello, Welcome to Jbean cafe, how may I assist you?" + "\n" + "Please enter 1 for getting overall menu info" + "\n" + "Enter 2 to place an order." + "\n");
+        System.out.printf("Hello, Welcome to Jbean cafe, how may I assist you?" + "\n" + "Please enter 1 for getting overall menu info" + "\n" + "Enter 2 to place an order." + "\n" + 
+        "Enter 3 if you are an authorized person" + "\n");
 
         int display = scanner.nextInt();
         scanner.nextLine();
 
         if(display == 1){
             System.out.printf("The total number of coffee available is: " + Coffee.getTotalCoffeeCount() + "\n");
-            System.out.printf("The total base price of coffee's available is: " + Coffee.getCoffeeRevenue() +"\n(This is only provided if you want to order the whole menu)");
+            System.out.printf("The total base price of coffee's available is : Rs." + Coffee.getCoffeeRevenue() +"\n(This is only provided if you want to order the whole menu)");
         }else if(display == 2){
             System.out.println("What coffee would you like to have? (espresso, latte, cappuccino, americano)");
             String coffeeChoice = scanner.nextLine().toLowerCase();
@@ -36,9 +39,24 @@ public class Index{
             } else {
                 System.out.println("Sorry, we don't have that coffee.");
             }
+        }else if(display == 3){
+            System.out.print("Enter the security password" + "\n");
+            String inpPass = scanner.nextLine();
+            if(inpPass.equals(Admission.getPassword())){
+                System.out.println("You are authorzied user"+ "\n" + "Enter whose details you would want to know about..");
+                String inpPersonType = scanner.nextLine();
+                switch(inpPersonType.toLowerCase()){
+                    case "employee":
+                        admission.displayEmployees();
+                        break;
+                    default:
+                        System.out.println("You were not specific");
+                }
+
+            }else{
+                System.out.println("You are not authorized");
+            }
         }
-
-
         scanner.close();
     }
 }
